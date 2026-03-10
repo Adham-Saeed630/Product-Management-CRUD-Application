@@ -11,6 +11,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: 'Product-Management-CRUD-Application',
   resolve: {
     alias: {
       '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
