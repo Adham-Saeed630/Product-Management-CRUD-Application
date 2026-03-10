@@ -6,12 +6,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Product-Management-CRUD-Application/', // Change 'crud-app' to your actual repo name
+  base: '/Product-Management-CRUD-Application/',
   plugins: [
     react(),
     tailwindcss(),
   ],
-  base: 'Product-Management-CRUD-Application',
   resolve: {
     alias: {
       '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
