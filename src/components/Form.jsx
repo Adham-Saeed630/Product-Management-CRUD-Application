@@ -25,13 +25,13 @@ function Form(){
 
     const imageHandler = (e) => {
 
-        const MAX_SIZE_MP = 5;
-        const MAX_SIZE_BYTES = MAX_SIZE_MP * 1024 * 1024;
+        const MAX_SIZE_KB = 100;
+        const MAX_SIZE_BYTES = MAX_SIZE_KB * 1024;
 
         const file = e.target.files[0];
         if(file){
             if(file.size > MAX_SIZE_BYTES){
-                alert(`Image size exceeds ${MAX_SIZE_MP}MB limit. Please choose a smaller Image.`);
+                alert(`Image size exceeds ${MAX_SIZE_KB}KB limit. Please choose a smaller Image.`);
                 return;
             }
             const reader = new FileReader();
