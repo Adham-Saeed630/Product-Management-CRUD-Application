@@ -12,10 +12,13 @@ import { ImageMinus } from 'lucide-react';
 function Form(){
     const methods = useForm();
     const { handleSubmit, register, reset } = methods;
-    const { addProduct, currentProduct, updateProduct } = useProductStore();
+    const { addProduct, currentProduct, updateProduct, isImageSizeValid, setIsImageSizeValid } = useProductStore();
     const [image, setImage] = useState(null);
     const [isImageRemoved, setIsImageRemoved] = useState(false);
     const navigate = useNavigate();
+
+    const MAX_SIZE_KB = 100;
+    const MAX_SIZE_BYTES = MAX_SIZE_KB * 1024;
 
     useEffect(() => {
         currentProduct && reset(currentProduct);
@@ -24,20 +27,17 @@ function Form(){
     }, [currentProduct, reset]);
 
     const imageHandler = (e) => {
-
-        const MAX_SIZE_KB = 100;
-        const MAX_SIZE_BYTES = MAX_SIZE_KB * 1024;
-
         const file = e.target.files[0];
         if(file){
             if(file.size > MAX_SIZE_BYTES){
-                alert(`Image size exceeds ${MAX_SIZE_KB}KB limit. Please choose a smaller Image.`);
+                setIsImageSizeValid(false);
                 return;
             }
             const reader = new FileReader();
             reader.onloadend = () => {
                 setImage(reader.result);
                 setIsImageRemoved(false);
+                setIsImageSizeValid(true);
             }
 
             reader.readAsDataURL(file);
@@ -86,6 +86,12 @@ function Form(){
                             </Button>
                         </div>
                         {image && <img src={image} alt="Image" className="mt-2 w-40 h-40 object-cover rounded"/>}
+                        {isImageSizeValid === false &&
+                            <div className={`flex items-center gap-2 text-red-500`}>
+                                <CircleAlert size={16}/>
+                                <span>{`Image size exceeds ${MAX_SIZE_KB}KB limit. Please choose a smaller Image.`}</span>
+                            </div>
+                        }
                     </div>
                 </div>
                 <Button type="submit" variant="success" className="col-span-full justify-center">

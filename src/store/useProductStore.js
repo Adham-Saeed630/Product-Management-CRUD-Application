@@ -17,6 +17,7 @@ const useProductStore = create((set, get) => ({
     currentProduct: null,
     lastAction: null,
     sort: "name-desc",
+    isImageSizeValid: true,
 
     fetchProducts: async () => {
         try{
@@ -180,6 +181,7 @@ const useProductStore = create((set, get) => ({
     },
     setCurrentProduct: (product) => set({currentProduct: product}),
     setSort: (value) => set({sort: value}),
+    setIsImageSizeValid: (value) => set({isImageSizeValid: value}),
 }));
 
 export default useProductStore;
