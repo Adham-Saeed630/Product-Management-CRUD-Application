@@ -3,6 +3,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import usePaginationStore from './usePaginationStore';
 
+const API_URL = 'https://69b04c16c63dd197febbee02.mockapi.io/api/v1';
+
 const useProductStore = create((set, get) => ({
     products: [],
     allProducts: [],
@@ -18,7 +20,7 @@ const useProductStore = create((set, get) => ({
 
     fetchProducts: async () => {
         try{
-            const response = await axios.get("http://localhost:3000/products");
+            const response = await axios.get(`${API_URL}/products`);
             set({
                 products: response.data,
                 allProducts: response.data,
@@ -63,7 +65,7 @@ const useProductStore = create((set, get) => ({
 
             const deleteConfirmed = async () => {
                 try{
-                    await axios.delete(`http://localhost:3000/products/${id}`);
+                    await axios.delete(`${API_URL}/products/${id}`);
                     set((state) => {
                         const newProducts = state.allProducts.filter((product) => product.id !== id);
                         const newProductsCount = newProducts.reduce((total) => total + 1, 0);
@@ -102,7 +104,7 @@ const useProductStore = create((set, get) => ({
     addProduct: async (product) => {
         const date = new Date().toLocaleString();
         try{
-            const response = await axios.post("http://localhost:3000/products", {...product, date: date});
+            const response = await axios.post(`${API_URL}/products`, {...product, date: date});
             set((state) => {
                 const updatedProducts = response.data;
                 return {
@@ -133,7 +135,7 @@ const useProductStore = create((set, get) => ({
     updateProduct: async (id, updatedProduct, isImageRemoved) =>{
         try{
             const date = new Date().toLocaleString();
-            const response = await axios.put((`http://localhost:3000/products/${id}`), {
+            const response = await axios.put((`${API_URL}/products/${id}`), {
                 date, 
                 ...updatedProduct,
                 ...(isImageRemoved && {image: null}),
@@ -172,7 +174,7 @@ const useProductStore = create((set, get) => ({
         };
     },
     getProductById: async (id) => {
-        const response = axios.get(`http://localhost:3000/products/${id}`);
+        const response = axios.get(`${API_URL}/products/${id}`);
         const product = (await response).data;
         set({currentProduct: product});
     },
