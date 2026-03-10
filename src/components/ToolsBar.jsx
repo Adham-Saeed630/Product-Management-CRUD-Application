@@ -18,7 +18,7 @@ function ToolsBar(){
     return(
         <div className="bg-(--neutral-200) w-full px-10 py-3 rounded-md flex flex-col lg:flex-row gap-2 justify-between items-center">
             <div className="flex gap-2">
-                <LinkButton to="/Product-Management-CRUD-Application/add-product" onClick={() => setCurrentProduct(null)} className=""><PackagePlus className="mr-2" /> Add Product</LinkButton>
+                <LinkButton to="/add-product" onClick={() => setCurrentProduct(null)} className=""><PackagePlus className="mr-2" /> Add Product</LinkButton>
                 <DropdownMenu label="Rows per page" onChange={(e) => setNumOfRows(e.target.value)} className="bg-neutral-100 text-zinc-900">
                     <ChevronDown size={18} className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-black"/>
                 </DropdownMenu>

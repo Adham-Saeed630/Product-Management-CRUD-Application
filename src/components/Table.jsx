@@ -77,7 +77,7 @@ function TableDemo(){
                                     <TableCell>{product.quantity}</TableCell>
                                     <TableCell>${Number(product.price * (1 - product.discount / 100) * (1 + product.tax / 100)).toFixed(2)}</TableCell>
                                     <TableCell className="flex gap-2">
-                                        <LinkButton to={`/Product-Management-CRUD-Application/edit-product/${product.id}`} className="flex items-center gap-1">
+                                        <LinkButton to={`/edit-product/${product.id}`} className="flex items-center gap-1">
                                             <SquarePen className="w-4 h-4 mr-1"/>
                                             Edit
                                         </LinkButton>

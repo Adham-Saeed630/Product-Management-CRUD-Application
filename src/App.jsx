@@ -10,10 +10,10 @@ function App() {
   return(
     <BrowserRouter>
       <Routes>
-        <Route path="/Product-Management-CRUD-Application/" element={<Layout/>}>
+        <Route path="/" element={<Layout/>}>
           <Route index element={<MainContent/>}/>
-          <Route path="/Product-Management-CRUD-Application/add-product" element={<AddProduct/>} />
-          <Route path="/Product-Management-CRUD-Application/edit-product/:id" element={<EditProduct/>} />
+          <Route path="add-product" element={<AddProduct/>} />
+          <Route path="edit-product/:id" element={<EditProduct/>} />
         </Route>
       </Routes>
     </BrowserRouter>
