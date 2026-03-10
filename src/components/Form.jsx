@@ -8,6 +8,7 @@ import { Plus } from 'lucide-react';
 import { Check } from 'lucide-react';
 import { ImagePlus } from 'lucide-react';
 import { ImageMinus } from 'lucide-react';
+import { CircleAlert } from 'lucide-react';
 
 function Form(){
     const methods = useForm();
@@ -87,7 +88,7 @@ function Form(){
                         </div>
                         {image && <img src={image} alt="Image" className="mt-2 w-40 h-40 object-cover rounded"/>}
                         {isImageSizeValid === false &&
-                            <div className={`flex items-center gap-2 text-red-500`}>
+                            <div className={`flex items-center gap-2 text-red-500 pt-3`}>
                                 <CircleAlert size={16}/>
                                 <span>{`Image size exceeds ${MAX_SIZE_KB}KB limit. Please choose a smaller Image.`}</span>
                             </div>
