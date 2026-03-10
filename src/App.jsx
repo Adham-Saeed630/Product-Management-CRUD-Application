@@ -8,12 +8,12 @@ import './App.css'
 function App() {
 
   return(
-    <BrowserRouter basename="/Product-Management-CRUD-Application/">
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/Product-Management-CRUD-Application/" element={<Layout/>}>
           <Route index element={<MainContent/>}/>
-          <Route path="/add-product" element={<AddProduct/>} />
-          <Route path="/edit-product/:id" element={<EditProduct/>} />
+          <Route path="/Product-Management-CRUD-Application/add-product" element={<AddProduct/>} />
+          <Route path="/Product-Management-CRUD-Application/edit-product/:id" element={<EditProduct/>} />
         </Route>
       </Routes>
     </BrowserRouter>

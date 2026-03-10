@@ -45,7 +45,7 @@ function Form(){
             addProduct(submittedData);
         }
 
-        navigate('/');
+        navigate('/Product-Management-CRUD-Application/');
     }
 
     const removeImage = () => {

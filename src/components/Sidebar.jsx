@@ -18,23 +18,23 @@ function Sidebar(){
                 <div className="absolute top-5 left-5 md:hidden" onClick={() => setIsNavOpen()}>
                     <X className="w-6 h-6 text-(--neutral-100) cursor-pointer"/>
                 </div>
-                <Link className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
+                <Link to="/Product-Management-CRUD-Application/" className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
                     <div className="w-6 h-6 flex items-center justify-center"><Package/></div>
                     <span className="max-w-xs md:group-hover:max-w-xs overflow-hidden transition-all duration-300">Products</span>
                 </Link>
-                <Link className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
+                <Link to="/Product-Management-CRUD-Application/" className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
                     <div className="w-6 h-6 flex items-center justify-center"><ListTree/></div>
                     <span className="max-w-xs group-hover:max-w-xs overflow-hidden transition-all duration-300">Categories</span>
                 </Link>
-                <Link className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
+                <Link to="/Product-Management-CRUD-Application/" className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
                     <div className="w-6 h-6 flex items-center justify-center"><Users/></div>
                     <span className="max-w-xs group-hover:max-w-xs overflow-hidden transition-all duration-300">Users</span>
                 </Link>
-                <Link className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
+                <Link to="/Product-Management-CRUD-Application/" className="flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
                     <div className="w-6 h-6 flex items-center justify-center"><Settings/></div>
                     <span className="max-w-xs group-hover:max-w-xs overflow-hidden transition-all duration-300">Settings</span>
                 </Link>
-                <Link className="mt-auto flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
+                <Link to="/Product-Management-CRUD-Application/" className="mt-auto flex gap-5 font-medium text-(--neutral-100) text-lg items-center py-2 px-2 hover:bg-(--neutral-100) hover:text-(--black-200) rounded-lg transition-all duration-150">
                     <div className="w-6 h-6 flex items-center justify-center"><LogOut/></div>
                     <span className="max-w-xs whitespace-nowrap group-hover:max-w-xs overflow-hidden transition-all duration-300">Log Out</span>
                 </Link>

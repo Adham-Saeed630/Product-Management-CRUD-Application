@@ -57,7 +57,7 @@ function Dashboard() {
     return (
         <div className="bg-linear-to-l from-(--black-100) to-(--black-700) py-10 px-8 md:px-10 rounded-lg flex flex-col lg:flex-row gap-5 justify-between items-center">
                 <div className="flex flex-col gap-10">
-                    <h1 className="text-4xl md:text-5xl font-bold text-(--neutral-100) cursor-pointer" onClick={() => navigate('./')}>Product Management System</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold text-(--neutral-100) cursor-pointer" onClick={() => navigate('/Product-Management-CRUD-Application/')}>Product Management System</h1>
                     <div className="flex flex-col md:gap-7 gap-10">
                         <div className="upper flex flex-col sm:flex-row gap-2 sm:gap-10 justify-center md:justify-start items-start">
                             <div className="flex gap-4">
